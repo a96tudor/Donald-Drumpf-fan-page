@@ -1,0 +1,147 @@
+/* see color.adobe.com */
+
+body {
+  background-color: : #FFF4D4
+  font-size : 16px;
+  line-height: 1.5;
+  font-family: 'Lato', sans-serif;
+
+  padding : 0;
+  margin : 0;
+  padding-top : 40px;
+}
+
+h1, h2, h3 {
+  font-family: 'Old Standard TT', serif;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing : 0.1em;
+  color : #FF2600;
+}
+
+a {
+  text-decoration: none;
+  color : #1507FF;
+  font-weight: bold;
+}
+
+/*a : hover {
+  color : #00077C;
+}*/
+
+/*a:visited {
+  color : #FFB435;
+}*/
+
+.big-text {
+  font-size : 1.75em;
+  font-weight: bold;
+}
+
+.list {
+  font-size : 0.75em;
+  font-weight : lighter;
+}
+
+.content-container {
+  width : 600px;
+  margin-left : auto;
+  margin-right : auto;
+}
+
+.box-test {
+  width : 100px;
+  height: 100px;
+  color : white;
+  background : red;
+  border : 5px solid green;
+  margin : 100px;
+}
+
+.big-image {
+  width : 100%;
+}
+
+.image-container {
+  width : 800px;
+  margin-left : auto;
+  margin-right :auto;
+  margin-top : 50px;
+  margin-bottom : 50px;
+}
+
+.hero {
+  text-align : center;
+  padding-top : 100px;
+  padding-bottom : 100px;
+  background : #111;
+  background-image: url(eagle.jpg);
+  background-size: cover;
+  background-position: center;
+  font-size : 3em;
+  margin-bottom : 100px;
+}
+
+.hero-heading {
+  color : #FFF;
+  font-weight: bolder;
+}
+
+.side-header {
+  position : fixed;
+  left : 0;
+  right : 0;
+  top : 0%;
+  width : 100%;
+  text-align : center;
+  background : #FF6047;
+  height : 50px;
+  line-height: 50px;
+  color : #fff;
+  border-bottom : 2px solid #4F7FE8;
+}
+
+.side-header-text {
+  color : #fff;
+  font-size : 1em;
+}
+
+.button-container {
+  text-align : center;
+}
+
+.angry-happy-image {
+  width : 500px;
+  margin-left : auto;
+  margin-right :auto;
+  margin-top : 50px;
+  margin-bottom : 50px;
+}
+
+.button {
+  background-color: #4f7fe8;
+  color : #fff;
+  padding : 5px;
+  padding-left : 14px;
+  padding-right : 14px;
+  font-size : 1.2em;
+  border-radius : 5px;
+  margin : 10px;
+  display: inline-block;
+  transition : 0.2s;
+  line-height: 1.5;
+  font-family: 'Lato', sans-serif;
+  border : none;
+  font-weight : bold;
+  cursor : pointer;
+}
+
+.button:hover {
+  background-color : #3D6DB2;
+  color : #fff;
+  transform : scale(1.1);
+}
+
+.button:active {
+  transform : scale(0.9);
+}
