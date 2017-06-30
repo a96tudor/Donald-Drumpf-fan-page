@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title>Working... </title>
+
+      <link rel="stylesheet" href="../static/css/start+stop.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700">
+
+</head>
+
+<script src="../static/js/start+stop.js"></script>
+
+<html>
+  <body>
+
+    <div id = "top-container">
+        <br />
+        <div id="user-greeting">
+
+        </div>
+
+        <div id="StartMeUpLogo">
+
+        </div>
+
+      </div>
+
+
+    <div id="main-container">
+      <div id="timer-container">
+
+        <label id="hours">00</label>:<label id="minutes">00</label>:<label id="seconds">00</label>
+          <script type="text/javascript">
+            var minutesLabel = document.getElementById("minutes");
+            var secondsLabel = document.getElementById("seconds");
+            var hoursLabel = document.getElementById("hours");
+            var totalSeconds = 0;
+            setInterval(setTime, 1000);
+
+            function setTime()
+            {
+              if (pauseActive) return;
+              ++totalSeconds;
+              secondsLabel.innerHTML = pad(totalSeconds%60);
+              var totalMinutes = parseInt(totalSeconds/60);
+              minutesLabel.innerHTML = pad(totalMinutes%60);
+              hoursLabel.innerHTML = pad(parseInt(totalMinutes/60));
+            }
+
+            function pad(val)
+            {
+              var valString = val + "";
+              if(valString.length < 2)
+              {
+                  return "0" + valString;
+              }
+              else
+              {
+                  return valString;
+              }
+            }
+        </script>
+
+      </div>
+
+      <div id="buttons-container">
+
+        <button class="button"
+                onclick="pause_button_press()"
+                id = "pause-button"> Pause
+        </button>
+
+        <button class="button button-tone-down"
+                onclick="done_button_press()"
+                id = "done-button">  Done!
+        </button>
+
+      </div>
+
+    </div>
+  </body>
+</html>
