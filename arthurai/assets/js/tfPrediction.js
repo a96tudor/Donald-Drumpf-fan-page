@@ -1,5 +1,5 @@
-const MODEL_URL = '../models/tf/tensorflowjs_model.pb';
-const WEIGHTS_URL = '../models/tf/weights_manifest.json';
+const MODEL_URL = 'assets/models/tf/tensorflowjs_model.pb';
+const WEIGHTS_URL = 'assets/models/tf/weights_manifest.json';
 
 let model = null;
 
