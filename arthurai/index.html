@@ -28,6 +28,10 @@
             .wizard-image {
                 width: 350px
             }
+            .results-title {
+              font-size: 22
+            }
+
         </style>
     </head>
     <body>
@@ -56,12 +60,29 @@
                         <option value="OTHER">OTHER</option>
                     </select>
                     <input type="text" onchange="predict()" oninput="predict()" id="domain" placeholder="ORIGIN" class="inputs"></input>
-                    <div id="result" class="results"></div>
-                    <div id="result-blockit" class=""></div>
-                    <div id="latency" class="results"></div>
                 </td>
                 </td>
                 </table>
+                </div>
+                <div id="results-container">
+                  <table>
+                    <tr>
+                      <th class="results-title">Neural Network</th>
+                      <th class="results-title">XGBoost</th>
+                    </tr>
+                    <tr>
+                      <td><div id="resultTF" class="results"></div></td>
+                      <td><div id="resultXGB" class="results"></div></td>
+                    </tr>
+                    <tr>
+                      <td><div id="result-blockitTF" class=""></div></td>
+                      <td><div id="result-blockitXGB" class=""></div></td>
+                    </tr>
+                    <tr>
+                      <td><div id="latencyTF" class=""></div></td>
+                      <td><div id="latencyXGB" class=""></div></td>
+                    </tr>
+                  </table>
                 </div>
             </div>
         </div>

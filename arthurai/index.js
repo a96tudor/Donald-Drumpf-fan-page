@@ -84,9 +84,9 @@ function predict() {
     }).dataSync();
     console.log(result);
     var t1 = performance.now();
-    document.getElementById("result").textContent = "Model thinks there's " + result[0].toFixed(4) * 100 + "% chance it's an ad";
-    document.getElementById("latency").textContent = "Latency: " + (t1 - t0) + "ms";
-    blockitElement = document.getElementById("result-blockit");
+    document.getElementById("resultTF").textContent = "Model thinks there's " + result[0].toFixed(4) * 100 + "% chance it's an ad";
+    document.getElementById("latencyTF").textContent = "Latency: " + (t1 - t0) + "ms";
+    blockitElement = document.getElementById("result-blockitTF");
     if (result[0] > 0.5) {
         blockitElement.textContent = "BLOCK IT!";
         blockitElement.className = "blockit";
