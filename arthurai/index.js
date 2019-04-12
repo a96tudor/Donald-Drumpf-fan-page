@@ -82,8 +82,9 @@ function predict() {
         Placeholder_1: typeTensor,
         Placeholder_2: domainTensor
     }).dataSync();
-    console.log(result);
+    //console.log(result);
     var t1 = performance.now();
+    console.log(result[0].toFixed(4))
     document.getElementById("resultTF").textContent = "Model thinks there's " + result[0].toFixed(4) * 100 + "% chance it's an ad";
     document.getElementById("latencyTF").textContent = "Latency: " + (t1 - t0) + "ms";
     blockitElement = document.getElementById("result-blockitTF");
