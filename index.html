@@ -1,3 +1,72 @@
-<script type="text/javascript">
-  window.location.replace("templates/start.html");
-</script>
+
+<!-- saved from url=(0028)https://adblock.ai/arthurai/ -->
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <script src="index.js"></script>
+    <script type="text/javascript" src="arthurai_files/tfjs@0.13.0"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <style>
+      .inputs {
+          width: 600px
+      }
+      .results {
+          width: 600px
+      }
+      .blockit {
+          width: 600px;
+          background-color: red;
+          color: white;
+          font-size: 24px
+      }
+      .dontblockit {
+          width: 600px;
+          background-color: green;
+          color: white;
+          font-size: 14px
+      }
+      .wizard-image {
+          width: 350px
+      }
+    </style>
+  </head>
+    <body>
+        <div class="container-fluid h-100">
+            <div class="row justify-content-center align-items-center h-100">
+                <div class="col col-md-6">
+                <table>
+                <tbody><tr>
+                <td>
+                    <img src="./arthurai_files/wizard.jpg" class="wizard-image">
+                </td>
+                <td>
+                    <input type="text" onchange="predict()" oninput="predict()" id="url" placeholder="URL" class="inputs">
+                    <select onchange="predict()" id="type" class="inputs">
+                        <option value="SCRIPT">SCRIPT</option>
+                        <option value="SUBDOCUMENT">SUBDOCUMENT</option>
+                        <option value="IMAGE">IMAGE</option>
+                        <option value="XMLHTTPREQUEST">XMLHTTPREQUEST</option>
+                        <option value="FONT">FONT</option>
+                        <option value="DOCUMENT">DOCUMENT</option>
+                        <option value="STYLESHEET">STYLESHEET</option>
+                        <option value="PING">PING</option>
+                        <option value="WEBSOCKET">WEBSOCKET</option>
+                        <option value="MEDIA">MEDIA</option>
+                        <option value="OBJECT">OBJECT</option>
+                        <option value="OTHER">OTHER</option>
+                    </select>
+                    <input type="text" onchange="predict()" oninput="predict()" id="domain" placeholder="ORIGIN" class="inputs">
+                    <div id="result" class="results">Model thinks there's 100% chance it's an ad</div>
+                    <div id="result-blockit" class="blockit">BLOCK IT!</div>
+                    <div id="latency" class="results">Latency: 9.405000004335307ms</div>
+                </td>
+
+                </tr></tbody></table>
+                </div>
+            </div>
+        </div>
+
+</body></html>
