@@ -29,4 +29,4 @@ function predict() {
 }
 
 
-loadScript('tfPrediction.js', function(){});
+loadScript('assets/js/tfPrediction.js', function(){});
