@@ -86,3 +86,4 @@ function runTests() {
     var t1 = performance.now();
     console.log("Call to predict " + numOfIterations + " URLs took " + (t1 - t0) + " milliseconds.");
 }
+loadScript('https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.13.0', onTfLoaded)

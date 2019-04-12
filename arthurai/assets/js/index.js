@@ -30,4 +30,3 @@ function predict() {
 
 
 loadScript('tfPrediction.js', function(){});
-loadScript('https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.13.0', onTfLoaded)
