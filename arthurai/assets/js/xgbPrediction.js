@@ -3,7 +3,12 @@ let xgbModel = null;
 
 function stringToArray(input, padLength) {
   var result = new Array(padLength);
-  console.log(result.toString());
+
+  for (let i = 0; i < input.length; ++i) {
+    result[i] = charIndex[input[i]];
+  }
+  result.fill(0, input.length);
+  console.log(result);
 
 }
 
