@@ -3,7 +3,7 @@ let xgbModel = null;
 
 function stringToArray(input, padLength) {
   var result = new Array(padLength);
-  console.log(result);
+  console.log(result.toString());
 
 }
 
