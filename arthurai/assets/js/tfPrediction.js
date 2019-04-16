@@ -3,22 +3,11 @@ const WEIGHTS_URL = 'assets/models/tf/weights_manifest.json';
 
 let model = null;
 
-let typeIndex = {};
+let typeIndexTF = {};
 
 function onTfLoaded() {
-    typeIndex =  {
-        'SCRIPT':           tf.tensor([[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]),
-        'SUBDOCUMENT':      tf.tensor([[0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]),
-        'IMAGE':            tf.tensor([[0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]]),
-        'XMLHTTPREQUEST':   tf.tensor([[0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]]),
-        'FONT':             tf.tensor([[0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]]),
-        'DOCUMENT':         tf.tensor([[0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]]),
-        'STYLESHEET':       tf.tensor([[0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0]]),
-        'OTHER':            tf.tensor([[0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0]]),
-        'PING':             tf.tensor([[0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0]]),
-        'WEBSOCKET':        tf.tensor([[0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0]]),
-        'MEDIA':            tf.tensor([[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0]]),
-        'OBJECT':           tf.tensor([[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]])
+    for (var key in typeIndex) {
+      typeIndexTF[key] = tf.tensor([typeIndex[key]]);
     }
 
     loadModel();
@@ -41,7 +30,7 @@ function stringToTensor(text, padLength) {
 }
 
 function typeToTensor(inputType) {
-    return typeIndex[inputType];
+    return typeIndexTF[inputType];
 }
 
 function predictTF() {
@@ -59,7 +48,6 @@ function predictTF() {
         Placeholder_2: domainTensor
     }).dataSync();
     var t1 = performance.now();
-    console.log(result[0].toFixed(4))
     document.getElementById("resultTF").textContent = "Model thinks there's " + result[0].toFixed(4) * 100 + "% chance it's an ad";
     document.getElementById("latencyTF").textContent = "Latency: " + (t1 - t0) + "ms";
     blockitElement = document.getElementById("result-blockitTF");

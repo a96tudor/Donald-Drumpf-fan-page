@@ -9,6 +9,21 @@ const charIndex = {
     '-': 51, '`': 52, '*': 53, '_': 54, '\\': 55, '|': 56, '~': 57
 }
 
+const typeIndex =  {
+      'SCRIPT':           [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      'SUBDOCUMENT':      [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      'IMAGE':            [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      'XMLHTTPREQUEST':   [0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+      'FONT':             [0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0],
+      'DOCUMENT':         [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
+      'STYLESHEET':       [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+      'OTHER':            [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
+      'PING':             [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
+      'WEBSOCKET':        [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
+      'MEDIA':            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
+      'OBJECT':           [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+}
+
 function loadScript(url, callback) {
     var script = document.createElement("script")
     script.type = "text/javascript";
@@ -25,8 +40,8 @@ function loadScript(url, callback) {
 
 function predict() {
   predictTF();
-  //predictXGB();
+  predictXGB();
 }
 
-
 loadScript('assets/js/tfPrediction.js', function(){});
+loadScript('assets/js/xgbPrediction.js', function(){});
