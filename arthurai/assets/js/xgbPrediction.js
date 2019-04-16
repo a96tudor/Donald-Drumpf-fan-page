@@ -8,7 +8,8 @@ function stringToArray(input, padLength) {
     result[i] = charIndex[input[i]];
   }
   result.fill(0, input.length);
-  console.log(result);
+
+  return result;
 
 }
 
