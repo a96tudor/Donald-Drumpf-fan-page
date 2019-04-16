@@ -37,8 +37,8 @@ function predictTF() {
     const url = document.getElementById("url").value;
     const domain = document.getElementById("domain").value;
     const type = document.getElementById("type").value;
-    const urlTensor = stringToTensor(url, 512);
-    const domainTensor = stringToTensor(domain, 100);
+    const urlTensor = stringToTensor(url, URL_LENGTH);
+    const domainTensor = stringToTensor(domain, DOMAIN_LENGTH);
     const typeTensor = typeToTensor(type);
 
     var t0 = performance.now();
