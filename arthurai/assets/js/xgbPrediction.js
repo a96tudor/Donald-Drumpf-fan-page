@@ -1,5 +1,5 @@
-const MODEL_PATH = "assets/models/xgb/model.xgb";
-let model = null;
+const XGB_MODEL_PATH = "assets/models/xgb/model.xgb";
+let xgbModel = null;
 
 function stringToArray(input, padLength) {
   var result = new Array(padLength);
