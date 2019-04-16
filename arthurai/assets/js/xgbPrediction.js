@@ -8,5 +8,9 @@ function stringToArray(input, padLength) {
 }
 
 function onXGBoostLoaded() {
+  // TODO
+}
+
+function predictXGB() {
   stringToArray("blah", 10);
 }
