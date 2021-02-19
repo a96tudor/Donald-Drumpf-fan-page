@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="static/css/index.css">
+    </head>
+    <body>
+        <h1 class="headline">Machine Learning-Driven Ad Blocking: From Data Collection to Deployment</h1>
+        <div class="abstract">
+            In this hands-on tutorial, we’ll give you an introduction to our journey of machine learning-based ad blocking, 
+            the research we have performed and our results. Together we’ll set up a website crawling service which produces 
+            datasets for self-supervised training, we’ll transform the crawled data into graphs, train a graph-based machine 
+            learning model and deploy it in a browser extension in order to run inference in the browser and block ads. The goal 
+            of this session is to give you an overview of how a machine learning project with a similar scope can be tackled and how 
+            to develop basic components ranging from data gathering to a simple extension which makes use of the data you trained 
+            your ML model with.
+        </div>
+        <div class="subsection">
+            <h1 class="subtitle">Background</h1>
+            <div class="subsubsection">
+                <h1 class="subsubtitle">Current state of adblocking</h1>
+                <p class="text">
+                    At the root of most of the adblockers stay a set of manually-curated filterlists (most well-known of which being 
+                    <a href="https://github.com/easylist">Easylist</a>). The bigger these filterlists get, the more difficult it is to
+                    maintain them, since it becomes challenging to understand which filters are outdated and which ones are not.
+                </p>
+                <p class="text">
+                    Moreover, these filterlists are hardly scalable, with every new ad requiring a new filter most of the time. This leads
+                    to an increased file size and to a less performant adblocker. Down the road, this means a poor experience for the end-user
+                    and we don't want that.
+                </p>
+            </div>
+            <div class="subsubsection">
+                <h1 class="subsubtitle">Why ML?</h1>
+                <p class="text">
+                    Ok, so we talked about how adblockers work currently and what the issues are with this. Now you might be wondering "Why 
+                    use Machine Learning? Why not something else?". Fundamentally, adblocking is a pattern-recognition problem. And most of
+                    the models used in modern ML, such as neural networks are optimised just for that. 
+                </p>
+                <p class="text">
+                    This is why we, the Automated Adblocking Team from <a href="https://eyeo.com/">eyeo GmbH</a> (the company behind 
+                    <a href="https://adblockplus.org/">AdblockPlus</a>), are exploring ways in which different kind of models might be 
+                    applied here. These models include, but are not limited to: graph-based models, OCR, image recognition and NLP.
+                </p>
+            </div>
+        </div>
+        <div class="subsection">
+            <h1 class="subtitle">Tutorial contents</h1>
+            <p class="text">
+                In this tutorial, we will walk through one of our latest exploratory projects attempted by our team that we like to call "Project Moonshot".
+                In a few words, we'll attempt to take a webpage's DOM tree, find a graph-based model that could identify which sections should be blocked
+                or not and finally put it in the adblocking extension. In more technical words, we'll go through:
+            </p>
+            <ul type=circle>
+                <li>
+                    <p class="bolded text">Data collecting - JavaScript</p>
+                    <p class="text">
+                        We'll extend <a href="https://adblockplus.org/">AdblockPlus</a> and make it work as an automatic labelled data collector and then
+                        we'll look into how we can fully automate this step by setting up a crawler.
+                    </p>
+                </li>
+                <li>
+                    <p class="bolded text">Data processing/ cleanup - Python</p>
+                    <p class="text">
+                        After we collect the data, we look at how it looks like and what we can do to get it ready to be used in model training.
+                    </p>
+                </li>
+                <li>
+                    <p class="bolded text">Model training - Python</p>
+                    <p class="text">
+                        With the data prepared, we'll try to train a model and see how well it can learn to classify parts of the DOM tree.
+                    </p>
+                </li>
+                <li>
+                    <p class="bolded text">Deployment - JavaScript</p>
+                    <p class="text">
+                        In this last section of the tutorial, we'll try to first reproduce the data preprocessing pipeline in JavaScript and finally to 
+                        deploy the model in the extension in order to test it in a real-life scenario.
+                    </p>
+                </li>
+            </ul>
+        </div>
+        <div class="subsection">
+            <h1 class="subtitle">Prerequisites</h1>
+            <h1 class="coming-soon">COMING SOON</h1>
+        </div>
+
+        <div>
+            <h1 class="subtitle">Who are we?</h1>
+            <div class="people">
+                <div class="inline-block">
+                    <img src="static/img/default-male.jpg" class="person-photo">
+                    <p class="name">Dragan Cvetinović</p>
+                    <p class="position"> ML Engineer, eyeo GmbH</p>
+                </div>
+                <div class="inline-block">
+                    <img src="static/img/default-male.jpg" class="person-photo">
+                    <p class="name">Johny Jose</p>
+                    <p class="position"> ML Engineer, eyeo GmbH</p>
+                </div>
+                <div class="inline-block">
+                    <img src="static/img/default-male.jpg" class="person-photo">
+                    <p class="name">Levan Tsinadze</p>
+                    <p class="position"> ML Engineer, eyeo GmbH</p>
+                </div>
+                <div class="inline-block">
+                    <img src="static/img/default-male.jpg" class="person-photo">
+                    <p class="name">Mario Koenig</p>
+                    <p class="position"> Product Owner, eyeo GmbH</p>
+                </div>
+                <div class="inline-block">
+                    <img src="static/img/default-female.jpg" class="person-photo">
+                    <p class="name">Rose Howell</p>
+                    <p class="position"> ML Engineer, eyeo GmbH</p>
+                </div>
+                <div class="inline-block">
+                    <img src="static/img/default-male.jpg" class="person-photo">
+                    <p class="name">Tudor Avram</p>
+                    <p class="position"> ML Engineer, eyeo GmbH</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
